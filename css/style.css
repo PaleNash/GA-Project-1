@@ -1,0 +1,76 @@
+/* html{
+min-width: 1024px;
+    min-height: 1440px;
+    max-width: 1024px;
+    max-height: 1440px;
+} */
+body {
+    background-image: url("../images/papyrus-backgroudn.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 100%; */
+    /* margin: 0 auto; */
+}
+.overlord {
+    /* max-width: 1028;
+    max-height: 1440; */
+    /* min-width: 300px;
+    min-height: 300px; */
+    height: 100%;
+    width: 100%;
+    /* display: fle; */
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.gameBoard{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    /* margin: 200px auto; */
+    /* justify-content: center; */
+    
+}
+
+.chicken {
+    display: grid;
+    /* height: 240px;
+    width: 120px; */
+    background-image: url("../images/binChicken.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-content: center;
+}
+.bin {
+    /* height: 240px;
+    width: 120px; */
+    background-image: url("../images/trash-can-transparent-background-17.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gameBoard > div {
+       height: 300px;
+    width: 500px;
+    background-color: red;
+}
+
+/* #top-left{
+    /* border-bottom: ; */
+    /* border-right: 2px solid red; */
+    /* background-color: red; }
+    */
