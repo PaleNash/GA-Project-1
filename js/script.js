@@ -13,6 +13,7 @@
 
 // const player1 = firstclick
 
+let currentPlayer = player1
 
 //Selector Logic - Apply Bin or Chicken class on DivClick
 const TopRightGrab = document.querySelector(`#top-right`)
@@ -22,10 +23,10 @@ TopRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         TopRightGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         TopRightGrab.classList(`bin`)
     }
 })
@@ -36,10 +37,10 @@ TopCenterGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         TopCenterGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         TopCenterGrab.classList(`bin`)
     }
 })
@@ -50,10 +51,10 @@ TopLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         TopLeftGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         TopLeftGrab.classList(`bin`)
     }
 })
@@ -64,10 +65,10 @@ CenterLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         CenterLeftGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         CenterLeftGrab.classList(`bin`)
     }
 })
@@ -78,10 +79,10 @@ CenterRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         CenterRightGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         CenterRightGrab.classList(`bin`)
     }
 })
@@ -92,10 +93,10 @@ middleGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         middleGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         middleGrab.classList(`bin`)
     }
 })
@@ -106,10 +107,10 @@ BottomLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         BottomLeftGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         BottomLeftGrab.classList(`bin`)
     }
 })
@@ -120,10 +121,10 @@ BottomRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         BottomRightGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         BottomRightGrab.classList(`bin`)
     }
 })
@@ -134,12 +135,24 @@ BottomCenterGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (player === player1){
+    else if (currentPlayer === player1){
         BottomCenterGrab.classList(`chicken`)
 }
-    else if (player === player2){
+    else if (currentPlayer === player2){
         BottomCenterGrab.classList(`bin`)
     }
 })
 
 //End of Selector Logic
+
+//Player Logic
+//currentPlayer declared earlier
+
+const playerIndicator = document.querySelector(`#playerIndicator`)
+playerIndicator.textContent = `Player 1`|| `Player 2`
+if (currentPlayer = player1){
+    playerIndicator.textContent = `Player 1`
+}
+else if (currentPlayer = player2){
+    playerIndicator.textContent = `Player 2`
+}
