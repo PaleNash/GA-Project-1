@@ -13,11 +13,20 @@
 
 // const player1 = firstclick
 
-let currentPlayer = player1
+// let currentPlayer = player1
+// console.log(currentPlayer)
+//`Player 1's Turn`
+//const playerAnnounce = document.querySelector(`somethingHere`)
+// if (currentPlayer = player1){
+// playerAnnounce.textContent = `Player 1's Turn`
+// }
+//else {
+// playerAnnounce.textContent = `Player 2's Turn`
+// }
 
 //Selector Logic - Apply Bin or Chicken class on DivClick
 const TopRightGrab = document.querySelector(`#top-right`)
-console.log(TopRightGrab.className)
+// console.log(TopRightGrab.className)
 TopRightGrab.addEventListener(`click`, () =>{
     if (TopRightGrab.className){
         alert(`You can't overwrite another option!`)
@@ -143,16 +152,22 @@ BottomCenterGrab.addEventListener(`click`, () =>{
     }
 })
 
+// if (TopLeftGrab.className === TopRightGrab.className && TopCenterGrab.className === TopCenterGrab.className){
+    // return winner screen
+    //`${TopLeftGrab.className}'s Win!` as text in a header / wrapped page content/ centred
+// }
+
 //End of Selector Logic
 
 //Player Logic
 //currentPlayer declared earlier
 
-const playerIndicator = document.querySelector(`#playerIndicator`)
-playerIndicator.textContent = `Player 1`|| `Player 2`
-if (currentPlayer = player1){
-    playerIndicator.textContent = `Player 1`
-}
-else if (currentPlayer = player2){
-    playerIndicator.textContent = `Player 2`
-}
+// const playerIndicator = document.querySelector(`#playerIndicator`)
+// playerIndicator.textContent = `Player 1's Turn`|| `Player 2's Turn`
+// if (currentPlayer = player1){
+//     playerIndicator.textContent = `Player 1's Turn`
+// }
+// else if (currentPlayer = player2){
+//     playerIndicator.textContent = `Player 2's Turn`
+// }
+
