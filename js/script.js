@@ -1,23 +1,27 @@
-//if id has class == alert `you cannot click here` (this is top in read order)
-//event listener, on click if player-1 = true, append chicken class, if player-2 = true, append bin class
-
-
-
-//if id topleft && top center && top right = class chicken === winner, player 1
-
-
 // const player1 = firstclick
+//everytime className is applied to gameboard - switch player // player1 //player2
 
-let currentPlayer = player1
-console.log(currentPlayer)
-`Player 1's Turn`
-const playerAnnounce = document.querySelector(`somethingHere`)
-if (currentPlayer = player1){
-playerAnnounce.textContent = `Player 1's Turn`
+let currentPlayer = `player1`
+const switchPlayer = () =>{
+if (currentPlayer === `player1`){
+    currentPlayer = `player2`
 }
-else {
-playerAnnounce.textContent = `Player 2's Turn`
+else if (currentPlayer === `player2`){
+    currentPlayer = `player1`
 }
+}
+
+
+
+// console.log(currentPlayer)
+// `Player 1's Turn`
+// const playerIndicator = document.querySelector(`somethingHere`)
+// if (currentPlayer = `player1`){
+// playerIndicator.textContent = `Player 1's Turn`
+// }
+// else {
+// playerIndicator.textContent = `Player 2's Turn`
+// }
 
 //Selector Logic - Apply Bin or Chicken class on DivClick
 const TopRightGrab = document.querySelector(`#top-right`)
@@ -27,11 +31,13 @@ TopRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        TopRightGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        TopRightGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        TopRightGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        TopRightGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -41,11 +47,13 @@ TopCenterGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        TopCenterGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        TopCenterGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        TopCenterGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        TopCenterGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -55,11 +63,13 @@ TopLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        TopLeftGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        TopLeftGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        TopLeftGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        TopLeftGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -69,11 +79,13 @@ CenterLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        CenterLeftGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        CenterLeftGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        CenterLeftGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        CenterLeftGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -83,11 +95,13 @@ CenterRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        CenterRightGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        CenterRightGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        CenterRightGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        CenterRightGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -97,11 +111,13 @@ middleGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        middleGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        middleGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        middleGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        middleGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -111,11 +127,13 @@ BottomLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        BottomLeftGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        BottomLeftGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        BottomLeftGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        BottomLeftGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -125,11 +143,13 @@ BottomRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        BottomRightGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        BottomRightGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        BottomRightGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        BottomRightGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
@@ -139,69 +159,78 @@ BottomCenterGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === player1){
-        BottomCenterGrab.classList(`chicken`)
+    else if (currentPlayer === `player1`){
+        BottomCenterGrab.classList.add(`chicken`)
+        switchPlayer()
 }
-    else if (currentPlayer === player2){
-        BottomCenterGrab.classList(`bin`)
+    else if (currentPlayer === `player2`){
+        BottomCenterGrab.classList.add(`bin`)
+        switchPlayer()
     }
 })
 
-//same logic for center left, middle, center right!
+//top left, center top, top right
+//center left, middle, center right
+//bottom left, bottom center, bottomr right
 //top left, center left, bottom left
 //top right, center right, bottom right
 //top center, middle, bottom center
 //top left, middle, bottom right
 //top right, middle, bottom left
 
+// Winning Logic for all 8 win conditions
+
 if (TopLeftGrab.className === TopRightGrab.className && TopLeftGrab.className === TopCenterGrab.className){
-    return winner
+    // return winner
     `${TopLeftGrab.className}'s Win!` //as text in a header / wrapped page content/ centred
 }
 if (CenterLeftGrab.className === middleGrab.className && CenterLeftGrab.className === CenterRightGrab.className){
-    return winner
+    // return winner
     `${CenterLeftGrab.className}'s Win!` 
 }
 if (BottomLeftGrab.className === BottomRightGrab.className && BottomLeftGrab.className === BottomCenterGrab.className){
-    return winner
+    // return winner
     `${BottomLeftGrab.className}'s Win!`
 }
 
 if (TopLeftGrab.className === CenterLeftGrab.className && TopLeftGrab.className === BottomLeftGrab.className){
-    return winner
+    // return winner
     `${TopLeftGrab.className}'s Win!`
 }
 
 if (TopCenterGrab.className === middleGrab.className && TopCenterGrab.className === BottomCenterGrab.className){
-    return winner
+    // return winner
     `${TopCenterGrab.className}'s Win!`
 }
 
 if (TopRightGrab.className === CenterRightGrab.className && TopRightGrab.className === BottomRightGrab.className){
-    return winner
+    // return winner
     `${TopRightGrab.className}'s Win!`
 }
 
 if (TopLeftGrab.className === middleGrab.className && TopLeftGrab.className === BottomRightGrab.className){
-    return winner
+    // return winner
     `${TopLeftGrab.className}'s Win!`
 }
 
 if (TopRightGrab.className === middleGrab.className && TopRightGrab.className === BottomLeftGrab.className){
-    return winner
+    // return winner
     `${TopRightGrab.className}'s Win!`
 }
-//End of Selector Logic
+
+//End of winning logic
+
+
 
 //Player Logic
 //currentPlayer declared earlier
 
 // const playerIndicator = document.querySelector(`#playerIndicator`)
 // playerIndicator.textContent = `Player 1's Turn`|| `Player 2's Turn`
-// if (currentPlayer = player1){
+// if (currentPlayer = `player1`){
 //     playerIndicator.textContent = `Player 1's Turn`
 // }
-// else if (currentPlayer = player2){
+// else if (currentPlayer = `player2`){
 //     playerIndicator.textContent = `Player 2's Turn`
 // }
 
