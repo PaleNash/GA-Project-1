@@ -11,6 +11,14 @@ else if (currentPlayer === `player2`){
 }
 }
 
+//below doesnt show 'player 2's turn' for some reason...
+const playerDisplay = document.querySelector(`#playerIndicator`)
+if (currentPlayer === `player1`){
+    playerDisplay.textContent = `Player 1's Turn`
+}
+else if (currentPlayer === `player2`){
+    playerDisplay.textContent = `Player 2's Turn`
+}
 
 
 // console.log(currentPlayer)
@@ -220,7 +228,12 @@ if (TopRightGrab.className === middleGrab.className && TopRightGrab.className ==
 
 //End of winning logic
 
+const winner = () =>{
+    const grabBoard = document.querySelector(`.gameBoard`)
+    const grabWinnerScreen = document.querySelector(`.winner`)
+    grabBoard.appendChild(grabWinnerScreen)
 
+}
 
 //Player Logic
 //currentPlayer declared earlier

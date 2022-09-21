@@ -66,8 +66,8 @@ body {
     border-radius: 10px;
 }
 
-/* #top-left{
-    /* border-bottom: ; */
-    /* border-right: 2px solid red; */
-    /* background-color: red; }
-    */
+.winner {
+    height: 100%;
+    width: 100%;
+    background-color: cornflowerblue;
+}
