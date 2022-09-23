@@ -237,6 +237,8 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 // 
 // 
 // 
+// Button for refresh (content not page) has to be lincluded before 'winner' as it displays on .winner overlay
+// reference LOTR project for how to append functionality to a button on creation of DOM element
 
 const winner = (currentPlayer) =>{
     if (currentPlayer === `player1`){
