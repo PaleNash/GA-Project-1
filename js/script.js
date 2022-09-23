@@ -1,5 +1,5 @@
-// const player1 = firstclick
-//everytime className is applied to gameboard - switch player // player1 //player2
+//Player Indicator Displays who's turn it is, Player 1 always begins (the `chicken` player)
+
 const playerDisplay = document.querySelector(`#playerIndicator`)
 let currentPlayer = `player1`
 const switchPlayer = () =>{
@@ -16,20 +16,8 @@ if (currentPlayer === `player1`){
     playerDisplay.textContent = `Player 1's Turn`
 }
 
-
-// console.log(currentPlayer)
-// `Player 1's Turn`
-// const playerIndicator = document.querySelector(`somethingHere`)
-// if (currentPlayer = `player1`){
-// playerIndicator.textContent = `Player 1's Turn`
-// }
-// else {
-// playerIndicator.textContent = `Player 2's Turn`
-// }
-
 //Selector Logic - Apply Bin or Chicken class on DivClick
 const TopRightGrab = document.querySelector(`#top-right`)
-// console.log(TopRightGrab.className)
 TopRightGrab.addEventListener(`click`, () =>{
     if (TopRightGrab.className){
         alert(`You can't overwrite another option!`)
@@ -37,10 +25,12 @@ TopRightGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         TopRightGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         TopRightGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -53,10 +43,12 @@ TopCenterGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         TopCenterGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         TopCenterGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -69,10 +61,12 @@ TopLeftGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         TopLeftGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         TopLeftGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -85,10 +79,12 @@ CenterLeftGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         CenterLeftGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         CenterLeftGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -101,10 +97,12 @@ CenterRightGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         CenterRightGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         CenterRightGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -117,10 +115,12 @@ middleGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         middleGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         middleGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -133,10 +133,12 @@ BottomLeftGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         BottomLeftGrab.classList.add(`chicken`)
+        checkWinner();
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         BottomLeftGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -149,10 +151,12 @@ BottomRightGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         BottomRightGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         BottomRightGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -165,10 +169,12 @@ BottomCenterGrab.addEventListener(`click`, () =>{
     }
     else if (currentPlayer === `player1`){
         BottomCenterGrab.classList.add(`chicken`)
+        checkWinner()
         switchPlayer()
 }
     else if (currentPlayer === `player2`){
         BottomCenterGrab.classList.add(`bin`)
+        checkWinner()
         switchPlayer()
     }
 })
@@ -183,65 +189,97 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 //top right, middle, bottom left
 
 // Winning Logic for all 8 win conditions
+// 
+// 
+// 
 
-if (TopLeftGrab.className === TopRightGrab.className && TopLeftGrab.className === TopCenterGrab.className){
-    // return winner
-    `${TopLeftGrab.className}'s Win!` //as text in a header / wrapped page content/ centred
+const winner = (currentPlayer) =>{
+    if (currentPlayer === `player1`){
+        const grabEndScreen = document.querySelector(`.endScreen`)
+        grabEndScreen.classList.add(`winner`)
+        const winnerDisplay = document.createElement(`h1`)
+        winnerDisplay.textContent = `${currentPlayer} is the winner! Click below to play again.`
+        grabEndScreen.appendChild(winnerDisplay)
+        
+    // .winner > h1.textContent = `Player 1 is the winner! Click below to play again`
+    }
+    else if (currentPlayer === `player2`){
+        const grabEndScreen = document.querySelector(`.endScreen`)
+        grabEndScreen.classList.add(`winner`)
+        const winnerDisplay = document.createElement(`h1`)
+        winnerDisplay.textContent = `${currentPlayer} is the winner! Click below to play again.`
+        grabEndScreen.appendChild(winnerDisplay)
+
+    }
+    // else if (gameEndCondition === `Draw`){
+    //     // drawScreen
+    // }
 }
+
+const checkWinner = () => {
+    if (TopLeftGrab.className === `chicken` && TopCenterGrab.className === `chicken` && TopRightGrab.className === `chicken` || TopLeftGrab.className === `bin` && TopCenterGrab.className === `bin` && TopRightGrab.className === `bin` ){
+        console.log(`${currentPlayer} is the winner`)
+        winner(currentPlayer)
+
+    }
+    // else if (CenterLeftGrab.className && middleGrab && CenterRightGrab)
+}
+
+// if (Board1Grab.className === `chicken` && Board2Grab.className === `chicken` && Board3Grab.className === `chicken`){
+//     console.log(Board1Grab.className)
+// }
+// if (TopLeftGrab.className === TopRightGrab.className && TopLeftGrab.className === TopCenterGrab.className){
+//     if (TopCenterGrab.className === `chicken`){
+        
+//     winner(`Player 1`)
+//     }
+//     else if (TopLeftGrab.className === `bin`){
+//         winner(`Player 2`)
+//     }
+// }
 if (CenterLeftGrab.className === middleGrab.className && CenterLeftGrab.className === CenterRightGrab.className){
-    // return winner
-    `${CenterLeftGrab.className}'s Win!` 
+    winner()
+    // `${CenterLeftGrab.className}'s Win!` 
 }
 if (BottomLeftGrab.className === BottomRightGrab.className && BottomLeftGrab.className === BottomCenterGrab.className){
-    // return winner
-    `${BottomLeftGrab.className}'s Win!`
+    winner()
+    // `${BottomLeftGrab.className}'s Win!`
 }
 
 if (TopLeftGrab.className === CenterLeftGrab.className && TopLeftGrab.className === BottomLeftGrab.className){
-    // return winner
-    `${TopLeftGrab.className}'s Win!`
+    winner()
+    // `${TopLeftGrab.className}'s Win!`
 }
 
 if (TopCenterGrab.className === middleGrab.className && TopCenterGrab.className === BottomCenterGrab.className){
-    // return winner
-    `${TopCenterGrab.className}'s Win!`
+    winner()
+    // `${TopCenterGrab.className}'s Win!`
 }
 
 if (TopRightGrab.className === CenterRightGrab.className && TopRightGrab.className === BottomRightGrab.className){
-    // return winner()
-    `${TopRightGrab.className}'s Win!`
+    winner()
+    // `${TopRightGrab.className}'s Win!`
 }
 
 if (TopLeftGrab.className === middleGrab.className && TopLeftGrab.className === BottomRightGrab.className){
-    // return winner()
-    `${TopLeftGrab.className}'s Win!`
+    winner()
+    // `${TopLeftGrab.className}'s Win!`
 }
 
 if (TopRightGrab.className === middleGrab.className && TopRightGrab.className === BottomLeftGrab.className){
-    // return winner()
-    `${TopRightGrab.className}'s Win!`
+    winner()
+    // `${TopRightGrab.className}'s Win!`
 }
 
+// const drawScreen = 
+// const gameboardGrab = document.querySelector(`.gameBoard`)
+// else if () {
+// for (let div in gameboardGrab){
+//     div.className = true
+//     winner(drawScreen)
+// }
+// }
 //End of winning logic
-
-const winner = () =>{
-    const grabBoard = document.querySelector(`.gameBoard`)
-    const grabWinnerScreen = document.querySelector(`.winner`)
-    grabBoard.appendChild(grabWinnerScreen)
-
-}
-
-//Player Logic
-//currentPlayer declared earlier
-
-// const playerIndicator = document.querySelector(`#playerIndicator`)
-// playerIndicator.textContent = `Player 1's Turn`|| `Player 2's Turn`
-// if (currentPlayer = `player1`){
-//     playerIndicator.textContent = `Player 1's Turn`
-// }
-// else if (currentPlayer = `player2`){
-//     playerIndicator.textContent = `Player 2's Turn`
-// }
 
 //restart button = refresh page /reload
 //score - between games

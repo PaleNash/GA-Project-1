@@ -15,11 +15,28 @@ body {
     height: 100%;
     width: 100%;
     /* display: fle; */
+    position: relative;
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr;
     vertical-align: center;
     justify-content: center;
+}
+h1{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.p1Score{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: center;
+    margin: auto auto;
+}
+.p2Score{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    text-align: center;
+    margin: auto auto;
 }
 
 .gameBoard{
@@ -67,7 +84,13 @@ body {
 }
 
 .winner {
+    display: flex;
     height: 100%;
     width: 100%;
     background-color: cornflowerblue;
+    position: absolute;
+    grid-area: 2 / 3 / 3 / 2;
+    justify-content: center;
+    align-items: center;
+
 }
