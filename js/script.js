@@ -1,4 +1,7 @@
 //Player Indicator Displays who's turn it is, Player 1 always begins (the `chicken` player)
+//
+//
+//
 
 const playerDisplay = document.querySelector(`#playerIndicator`)
 let currentPlayer = `player1`
@@ -17,6 +20,12 @@ if (currentPlayer === `player1`){
 }
 
 //Selector Logic - Apply Bin or Chicken class on DivClick
+//Stops overwrite of classes
+//Switches between players after class applied
+//checks winning logic on each div on click
+//
+//
+
 const TopRightGrab = document.querySelector(`#top-right`)
 TopRightGrab.addEventListener(`click`, () =>{
     if (TopRightGrab.className){
@@ -234,10 +243,10 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 })
 
 // Winning Logic for all 8 win conditions
+// add's `X player is the winner` screen display (via appending class .winner)
 // 
 // 
-// 
-// Button for refresh (content not page) has to be lincluded before 'winner' as it displays on .winner overlay
+// Button for refresh (content not page) has to be included before 'winner' as it displays on .winner overlay
 // reference LOTR project for how to append functionality to a button on creation of DOM element
 
 const winner = (currentPlayer) =>{
@@ -266,8 +275,8 @@ const winner = (currentPlayer) =>{
 }
 
 // Begin of CheckWinner Logic //
-//
-//
+// Returns True to prevent double up of Draw/Win Condition if player wins on final selection
+// Returns False to allow for Draw's / Continuation of game
 
 const checkWinner = () => {
     if (TopLeftGrab.className === `chicken` && TopCenterGrab.className === `chicken` && TopRightGrab.className === `chicken` || TopLeftGrab.className === `bin` && TopCenterGrab.className === `bin` && TopRightGrab.className === `bin` ){
@@ -328,4 +337,4 @@ const drawScreen = () => {
 
 //restart button = refresh page /reload
 //score - between games
-//nah fuck both of these draw logic made me wanna kms
+
