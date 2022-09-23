@@ -1,23 +1,19 @@
 // const player1 = firstclick
 //everytime className is applied to gameboard - switch player // player1 //player2
-
+const playerDisplay = document.querySelector(`#playerIndicator`)
 let currentPlayer = `player1`
 const switchPlayer = () =>{
 if (currentPlayer === `player1`){
     currentPlayer = `player2`
+    playerDisplay.textContent = `Player 2's Turn`
 }
 else if (currentPlayer === `player2`){
     currentPlayer = `player1`
-}
-}
-
-//below doesnt show 'player 2's turn' for some reason...
-const playerDisplay = document.querySelector(`#playerIndicator`)
-if (currentPlayer === `player1`){
     playerDisplay.textContent = `Player 1's Turn`
 }
-else if (currentPlayer === `player2`){
-    playerDisplay.textContent = `Player 2's Turn`
+}
+if (currentPlayer === `player1`){
+    playerDisplay.textContent = `Player 1's Turn`
 }
 
 
@@ -179,7 +175,7 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 
 //top left, center top, top right
 //center left, middle, center right
-//bottom left, bottom center, bottomr right
+//bottom left, bottom center, bottom right
 //top left, center left, bottom left
 //top right, center right, bottom right
 //top center, middle, bottom center
@@ -212,17 +208,17 @@ if (TopCenterGrab.className === middleGrab.className && TopCenterGrab.className 
 }
 
 if (TopRightGrab.className === CenterRightGrab.className && TopRightGrab.className === BottomRightGrab.className){
-    // return winner
+    // return winner()
     `${TopRightGrab.className}'s Win!`
 }
 
 if (TopLeftGrab.className === middleGrab.className && TopLeftGrab.className === BottomRightGrab.className){
-    // return winner
+    // return winner()
     `${TopLeftGrab.className}'s Win!`
 }
 
 if (TopRightGrab.className === middleGrab.className && TopRightGrab.className === BottomLeftGrab.className){
-    // return winner
+    // return winner()
     `${TopRightGrab.className}'s Win!`
 }
 
