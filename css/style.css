@@ -27,12 +27,14 @@ h1{
 
 .p1{
     text-align: center;
+    font-size: 3em;
     margin: auto;
     text-decoration: underline black;
 }
 
 .p2{
     text-align: center;
+    font-size: 3em;
     margin: auto;
     text-decoration: underline black;
 }
