@@ -4,18 +4,18 @@
 //
 
 const playerDisplay = document.querySelector(`#playerIndicator`)
-let currentPlayer = `player1`
+let currentPlayer = `Player 1`
 const switchPlayer = () =>{
-if (currentPlayer === `player1`){
-    currentPlayer = `player2`
+if (currentPlayer === `Player 1`){
+    currentPlayer = `Player 2`
     playerDisplay.textContent = `Player 2's Turn`
 }
-else if (currentPlayer === `player2`){
-    currentPlayer = `player1`
+else if (currentPlayer === `Player 2`){
+    currentPlayer = `Player 1`
     playerDisplay.textContent = `Player 1's Turn`
 }
 }
-if (currentPlayer === `player1`){
+if (currentPlayer === `Player 1`){
     playerDisplay.textContent = `Player 1's Turn`
 }
 
@@ -32,7 +32,7 @@ TopRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         TopRightGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -40,7 +40,7 @@ TopRightGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         TopRightGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -56,7 +56,7 @@ TopCenterGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         TopCenterGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -64,7 +64,7 @@ TopCenterGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         TopCenterGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -80,7 +80,7 @@ TopLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         TopLeftGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -88,7 +88,7 @@ TopLeftGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         TopLeftGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -104,7 +104,7 @@ CenterLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         CenterLeftGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -112,7 +112,7 @@ CenterLeftGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         CenterLeftGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -128,7 +128,7 @@ CenterRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         CenterRightGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -136,7 +136,7 @@ CenterRightGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         CenterRightGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -152,7 +152,7 @@ middleGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         middleGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -160,7 +160,7 @@ middleGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         middleGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -176,7 +176,7 @@ BottomLeftGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         BottomLeftGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -184,7 +184,7 @@ BottomLeftGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         BottomLeftGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -200,7 +200,7 @@ BottomRightGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         BottomRightGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -208,7 +208,7 @@ BottomRightGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         BottomRightGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -224,7 +224,7 @@ BottomCenterGrab.addEventListener(`click`, () =>{
         alert(`You can't overwrite another option!`)
         return
     }
-    else if (currentPlayer === `player1`){
+    else if (currentPlayer === `Player 1`){
         BottomCenterGrab.classList.add(`chicken`)
         const win = checkWinner()
         if (win === false) {
@@ -232,7 +232,7 @@ BottomCenterGrab.addEventListener(`click`, () =>{
         }
         switchPlayer()
 }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         BottomCenterGrab.classList.add(`bin`)
         const win = checkWinner()
         if (win === false) {
@@ -274,7 +274,7 @@ const gameBoardRefresh = () =>{
     const buttonSelect = document.querySelector(`button`)
     buttonSelect.remove()
     playerDisplay.textContent = `Player 1's Turn`
-    currentPlayer = `player1`
+    currentPlayer = `Player 1`
     }
 
 const replay = () =>{
@@ -286,22 +286,22 @@ const replay = () =>{
     }
 
 const winner = (currentPlayer) =>{
-    if (currentPlayer === `player1`){
+    if (currentPlayer === `Player 1`){
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const winnerDisplay = document.createElement(`h1`)
         winnerDisplay.className = `winnerDisplay`
-        winnerDisplay.textContent = `${currentPlayer} is the winner! Click below to play again.`
+        winnerDisplay.textContent = `${currentPlayer} is the winner! Click to play again.`
         grabEndScreen.appendChild(winnerDisplay)
         ScoreUpdate(`p1ScoreNum`)
         replay()
     }
-    else if (currentPlayer === `player2`){
+    else if (currentPlayer === `Player 2`){
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const winnerDisplay = document.createElement(`h1`)
         winnerDisplay.className = `winnerDisplay`
-        winnerDisplay.textContent = `${currentPlayer} is the winner! Click below to play again.`
+        winnerDisplay.textContent = `${currentPlayer} is the winner! Click to play again.`
         grabEndScreen.appendChild(winnerDisplay)
         ScoreUpdate(`p2ScoreNum`)
         replay()
@@ -311,7 +311,7 @@ const winner = (currentPlayer) =>{
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const drawDisplay = document.createElement(`h1`)
-        drawDisplay.textContent = `This game is a draw! Click below to play again.`
+        drawDisplay.textContent = `This game is a draw! Click to play again.`
         grabEndScreen.appendChild(drawDisplay)
         // replay()
     }
