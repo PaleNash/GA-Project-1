@@ -246,6 +246,7 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 // add's `X player is the winner` screen display (via appending class .winner)
 // 
 // Refresh Page and Score Update Logic
+const ScoreUpdate = (num) => {
     let score1 = document.getElementById(`${num}`)
     let scoreInt = parseInt(score1.textContent)
     console.log(scoreInt)
