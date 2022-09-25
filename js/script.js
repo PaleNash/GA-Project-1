@@ -245,18 +245,13 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 // Winning Logic for all 8 win conditions
 // add's `X player is the winner` screen display (via appending class .winner)
 // 
-// 
-// Button for refresh (content not page) has to be included before 'winner' as it displays on .winner overlay
-// reference LOTR project for how to append functionality to a button on creation of DOM element
-
-const ScoreUpdate = (num) => {
+// Refresh Page and Score Update Logic
     let score1 = document.getElementById(`${num}`)
     let scoreInt = parseInt(score1.textContent)
     console.log(scoreInt)
     scoreInt +=1
     score1.textContent = scoreInt
 }
-// WIP
 const gameBoardRefresh = () =>{
     TopLeftGrab.className = ""
     TopCenterGrab.className = ""
@@ -311,9 +306,10 @@ const winner = (currentPlayer) =>{
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const drawDisplay = document.createElement(`h1`)
+        winnerDisplay.className = `winnerDisplay`
         drawDisplay.textContent = `This game is a draw! Click to play again.`
         grabEndScreen.appendChild(drawDisplay)
-        // replay()
+        replay()
     }
 }
 
