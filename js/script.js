@@ -249,20 +249,62 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 // Button for refresh (content not page) has to be included before 'winner' as it displays on .winner overlay
 // reference LOTR project for how to append functionality to a button on creation of DOM element
 
+const ScoreUpdate = (num) => {
+    let score1 = document.getElementById(`${num}`)
+    let scoreInt = parseInt(score1.textContent)
+    console.log(scoreInt)
+    scoreInt +=1
+    score1.textContent = scoreInt
+}
+// WIP
+const gameBoardRefresh = () =>{
+    TopLeftGrab.className = ""
+    TopCenterGrab.className = ""
+    TopRightGrab.className = ""
+    CenterLeftGrab.className = ""
+    middleGrab.className = ""
+    CenterRightGrab.className = ""
+    BottomLeftGrab.className = ""
+    BottomCenterGrab.className = ""
+    BottomRightGrab.className = ""
+    const grabEndScreen = document.querySelector(`.endScreen`)
+    grabEndScreen.classList.remove(`winner`)
+    const winnerDisplay = document.querySelector(`.winnerDisplay`)
+    winnerDisplay.remove()
+    const buttonSelect = document.querySelector(`button`)
+    buttonSelect.remove()
+    playerDisplay.textContent = `Player 1's Turn`
+    currentPlayer = `player1`
+    }
+
+const replay = () =>{
+    const winnerScreenSelect = document.querySelector(`.winner`)
+    const playAgainButton = document.createElement(`button`)
+    playAgainButton.innerText = `Play Again?`
+    winnerScreenSelect.appendChild(playAgainButton)
+    playAgainButton.addEventListener(`click`, () => {gameBoardRefresh()})
+    }
+
 const winner = (currentPlayer) =>{
     if (currentPlayer === `player1`){
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const winnerDisplay = document.createElement(`h1`)
+        winnerDisplay.className = `winnerDisplay`
         winnerDisplay.textContent = `${currentPlayer} is the winner! Click below to play again.`
         grabEndScreen.appendChild(winnerDisplay)
+        ScoreUpdate(`p1ScoreNum`)
+        replay()
     }
     else if (currentPlayer === `player2`){
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const winnerDisplay = document.createElement(`h1`)
+        winnerDisplay.className = `winnerDisplay`
         winnerDisplay.textContent = `${currentPlayer} is the winner! Click below to play again.`
         grabEndScreen.appendChild(winnerDisplay)
+        ScoreUpdate(`p2ScoreNum`)
+        replay()
 
     }
     else if (currentPlayer === `draw`){
@@ -271,6 +313,7 @@ const winner = (currentPlayer) =>{
         const drawDisplay = document.createElement(`h1`)
         drawDisplay.textContent = `This game is a draw! Click below to play again.`
         grabEndScreen.appendChild(drawDisplay)
+        // replay()
     }
 }
 
@@ -280,42 +323,34 @@ const winner = (currentPlayer) =>{
 
 const checkWinner = () => {
     if (TopLeftGrab.className === `chicken` && TopCenterGrab.className === `chicken` && TopRightGrab.className === `chicken` || TopLeftGrab.className === `bin` && TopCenterGrab.className === `bin` && TopRightGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (CenterLeftGrab.className === `chicken` && middleGrab.className === `chicken` && CenterRightGrab.className === `chicken` || CenterLeftGrab.className === `bin` && middleGrab.className === `bin` && CenterRightGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (BottomLeftGrab.className === `chicken` && BottomCenterGrab.className === `chicken` && BottomRightGrab.className === `chicken` || BottomLeftGrab.className === `bin` && BottomCenterGrab.className === `bin` && BottomRightGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (TopLeftGrab.className === `chicken` && CenterLeftGrab.className === `chicken` && BottomLeftGrab.className === `chicken` || TopLeftGrab.className === `bin` && CenterLeftGrab.className === `bin` && BottomLeftGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (TopCenterGrab.className === `chicken` && middleGrab.className === `chicken` && BottomCenterGrab.className === `chicken` || TopCenterGrab.className === `bin` && middleGrab.className === `bin` && BottomCenterGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (TopRightGrab.className === `chicken` && CenterRightGrab.className === `chicken` && BottomRightGrab.className === `chicken` || TopRightGrab.className === `bin` && CenterRightGrab.className === `bin` && BottomRightGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (TopLeftGrab.className === `chicken` && middleGrab.className === `chicken` && BottomRightGrab.className === `chicken` || TopLeftGrab.className === `bin` && middleGrab.className === `bin` && BottomRightGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
     if (TopRightGrab.className === `chicken` && middleGrab.className === `chicken` && BottomLeftGrab.className === `chicken` || TopRightGrab.className === `bin` && middleGrab.className === `bin` && BottomLeftGrab.className === `bin` ){
-        console.log(`${currentPlayer} is the winner`)
         winner(currentPlayer)
         return true
     }
@@ -327,8 +362,6 @@ const checkWinner = () => {
 const drawScreen = () => {
     const chickens = document.querySelectorAll('.chicken')
     const bins = document.querySelectorAll(`.bin`)
-
-    console.log(chickens.length + bins.length)
     if (chickens.length + bins.length === 9){
         winner(`draw`)
     }
@@ -338,3 +371,4 @@ const drawScreen = () => {
 //restart button = refresh page /reload
 //score - between games
 
+//Attempted function for scoreboard / updating
