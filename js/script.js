@@ -241,11 +241,12 @@ BottomCenterGrab.addEventListener(`click`, () =>{
         switchPlayer()
     }
 })
-
+//
 // Winning Logic for all 8 win conditions
 // add's `X player is the winner` screen display (via appending class .winner)
 // 
 // Refresh Page and Score Update Logic
+//
 const ScoreUpdate = (num) => {
     let score1 = document.getElementById(`${num}`)
     let scoreInt = parseInt(score1.textContent)
@@ -312,10 +313,13 @@ const winner = (currentPlayer) =>{
         replay()
     }
 }
-
+//
+//
 // Begin of CheckWinner Logic //
 // Returns True to prevent double up of Draw/Win Condition if player wins on final selection
 // Returns False to allow for Draw's / Continuation of game
+//
+//
 
 const checkWinner = () => {
     if (TopLeftGrab.className === `chicken` && TopCenterGrab.className === `chicken` && TopRightGrab.className === `chicken` || TopLeftGrab.className === `bin` && TopCenterGrab.className === `bin` && TopRightGrab.className === `bin` ){
@@ -362,9 +366,6 @@ const drawScreen = () => {
         winner(`draw`)
     }
 }
+//
+//
 //End of winning logic
-
-//restart button = refresh page /reload
-//score - between games
-
-//Attempted function for scoreboard / updating
