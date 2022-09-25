@@ -249,7 +249,6 @@ BottomCenterGrab.addEventListener(`click`, () =>{
 const ScoreUpdate = (num) => {
     let score1 = document.getElementById(`${num}`)
     let scoreInt = parseInt(score1.textContent)
-    console.log(scoreInt)
     scoreInt +=1
     score1.textContent = scoreInt
 }
@@ -307,7 +306,7 @@ const winner = (currentPlayer) =>{
         const grabEndScreen = document.querySelector(`.endScreen`)
         grabEndScreen.classList.add(`winner`)
         const drawDisplay = document.createElement(`h1`)
-        winnerDisplay.className = `winnerDisplay`
+        drawDisplay.className = `winnerDisplay`
         drawDisplay.textContent = `This game is a draw! Click to play again.`
         grabEndScreen.appendChild(drawDisplay)
         replay()
