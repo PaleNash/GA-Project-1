@@ -99,8 +99,10 @@ h1{
     align-items: center;
 
 }
-.winner > button {
-    margin: auto;
+button {
+position: relative;
+display: inline;
+margin-top: 250px;
 }
 
 footer{
