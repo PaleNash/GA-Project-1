@@ -86,7 +86,6 @@ h1{
     height: 200px;
     width: 100%;
     background-color: rgb(99, 148, 166);
-    opacity: 0.7;
     border-radius: 10px;
 }
 
@@ -99,7 +98,6 @@ h1{
     grid-area: 2 / 3 / 3 / 2;
     justify-content: center;
     align-items: center;
-
 }
 button {
 position: relative;
